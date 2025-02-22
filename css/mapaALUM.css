@@ -1,0 +1,450 @@
+/*Fuente Principal*/
+/*Body es el elemento que se llama para enlazarlo con html a css*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #0040c9;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all .3s;
+}
+
+/* Elementos de encabezados */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #464646;
+}
+
+h2 {
+    font-size: 50px;
+    color: rgb(6, 14, 121);
+}
+
+h4 {
+    font-size: 19px;
+    color: rgb(97, 95, 95);
+}
+
+p, h4 {
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Se elimina el margen por predeterminado del párrafo debajo del título */
+p, h2 {
+    margin: 0;
+}
+
+/* Centralizado de los elementos */
+.supercontainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 95px;
+    margin: 0px;
+    /*background-color: rgb(131, 126, 126);*/
+    border: 0px solid rgb(0, 0, 0);
+    border-radius: 0px;
+}
+
+/* -----------------------------------------Botón del menú hamburguesa---------------------------*/
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: center;
+    right: 10px;
+    
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-container {
+        display: none;
+        flex-direction: column;
+    }
+
+    .containerinfo,
+    .container2,
+    .container3 {
+        display: none;
+    }
+}
+
+.menu-container.active {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    /*background: rgba(128, 128, 128, 0.945);*/
+   /* border: 2.5px solid #ccc;*/
+    border-radius: 5px;
+    padding: 10px;
+    flex-direction: column;
+    z-index: 3; /* Asegura que el menú esté encima del mapa */
+}
+/*----------------------animacionn del meniu-------------------------------------------*/
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.menu-container {
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-container.active {
+    animation: slideIn 0.3s forwards;
+}
+
+.menu-container.exit {
+    animation: slideOut 0.3s forwards;
+}
+
+
+/*--------------------------------------------------------------------------------------*/
+
+.containerlogo {
+    width: 80px;
+    height: 80px;
+    margin: 2px;
+}
+
+#logoweb img {
+    width: 100%;
+    margin-left: 4px;
+    height: auto;
+    /*background-color: rgb(131, 126, 126);*/
+}
+
+.MensajeUNIMAP {
+    width: auto;
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    text-align: left;
+    /*background-color: rgb(131, 126, 126);*/
+    border-radius: 4px;
+}
+
+#nombrelogo {
+    width: 100%;
+    height: auto;
+}
+
+/* Container info */
+.containerinfo,
+.containerinf1,
+.containerinf2,
+.container2,
+.container3 {
+    width: auto;
+    height: 80px;
+    margin: 10px;
+    text-align: left;
+    border: 0px solid rgb(180, 65, 225);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(131, 126, 126);
+    border-radius: 45px;
+    border: 2.5px solid #ccc;
+}
+
+
+
+.container3 {
+    width: auto;
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container3 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container3 i {
+    font-size: 24px; /* Tamaño original del ícono */
+    transform: scale(1.6); /* Ajusta la escala según tus necesidades */
+    transition: transform 0.3s; /* Suaviza la transición */
+}
+
+
+@media only screen and (max-width: 768px) {
+    .containerinfo,
+    .containerinf1,
+    .containerinf2,
+    .container2,
+    .container3 {
+        width: 100%;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .menu-container.active .containerinfo,
+    .menu-container.active .container2,
+    .menu-container.active .container3,
+    .menu-container.active .containerinf1,
+    .menu-container.active .containerinf2 {
+        display: flex;
+    }
+}
+
+/* Estilo de colores para los enlaces .btn y del ícono de Facebook */
+a.btn, .container3 .fab {
+    background-color: transparent;
+    padding: 23px;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+a.btn:hover, .container3 .fab:hover {
+    animation: cambioColor 2s forwards;
+}
+
+@keyframes cambioColor {
+    0% { color: #75a63c; }
+    100% { color: #fbff00; }
+}
+
+a.btn, .container3 .fab {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 2px;
+    transition: font-size 0.3s ease;
+}
+
+a.btn:hover, .container3 .fab:hover {
+    font-size: 18px;
+}
+
+
+
+
+
+
+/*---Fin contenedor de barra-------------------------------------------------------------------------------------------------*/
+
+/* Containermapa */
+/* Containermapa */
+.containermapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    height: 900px; /* Ajusta este valor según sea necesario */
+    margin-top: 20px;
+    border: 3px solid #8B4513;
+    position: relative; /* Asegura que los hijos se posicionen relativamente */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    cursor: grab; /* Indicador visual de que es posible arrastrar el mapa */
+    z-index: 1; /* Asegura que el mapa esté detrás del menú */
+}
+
+#mapa {
+    position: absolute; /* Asegura que se pueda mover dentro del contenedor */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5); /* Centra la imagen y la escala */
+    width: auto; /* Ajusta según necesites para asegurar que ocupe todo el marco */
+    height: auto; /* Ajusta según necesites para asegurar que ocupe todo el marco */
+    /*cursor: grabbing; /* Indicador visual durante el arrastre */
+    z-index: 1; /* Asegura que el mapa esté detrás del menú */
+}
+
+/* Controles de zoom */
+.controls {
+    position: absolute;
+    bottom: 10px; /* Ajusta según sea necesario */
+    right: 10px;  /* Mover a la parte inferior derecha */
+    display: flex;
+    flex-direction: column;
+    z-index: 2; /* Asegura que el mapa esté detrás del menú */
+}
+
+.button {
+    margin: 5px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+#zoom-in {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgba(233, 232, 232, 0.253);
+    background-color: rgb(175, 173, 173);
+    border-radius: 4px;
+    margin-bottom: 5px; /* Añadir margen abajo del botón de zoom-in */
+}
+
+#zoom-out {
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgba(233, 232, 232, 0.253);
+    background-color: rgb(175, 173, 173);
+    border-radius: 4px;
+    margin-bottom: 5px; /* Añadir margen abajo del botón de zoom-out */
+}
+
+/* Cambiar el color interno al presionar */
+#zoom-in:active,
+#zoom-out:active {
+    background-color: #000080;
+    color: white;
+    transform: scale(1.2);
+    transition: transform 0.1s ease;
+}
+
+/* Cambiar el color al pasar el ratón */
+#zoom-in:hover,
+#zoom-out:hover {
+    background-color: rgb(1, 45, 190);
+    color: yellow;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+/*NuevoAlan*/
+
+
+/* Estilos para la pantalla de bienvenida */
+.pantalla-bienvenida {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: grey;*/
+    background-color: rgb(255, 255, 255);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 1.5s forwards;
+    animation-delay: 1.5s; /* Esperar 1 segundo antes de iniciar la animación */
+}
+
+/* Estilo para el mensaje de bienvenida */
+#mensajeBienvenida {
+    font-size: 35px;
+    animation: fadeOut 1s forwards;
+    animation-delay: 1s; /* Esperar 0.5 segundos antes de iniciar la animación */
+}
+#mensajeCargando {
+    font-size: 20px;
+    animation: fadeOut 1s forwards;
+    animation-delay: 1s; /* Esperar 0.5 segundos antes de iniciar la animación */
+}
+
+/* Estilo para la imagen de bienvenida */
+.imagen-bienvenida {
+    margin-top: 20px;
+    width: 60px;
+    height: auto;
+    opacity: 1;
+    animation: fadeOut 2s forwards, App-logo-spin 2s infinite linear;
+    animation-delay: 0s; /* Esperar 0.5 segundos antes de iniciar la animación */
+}
+
+/* Animación para desvanecerse */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    /*to{
+        opacity: 1;
+    }*/
+    to {
+        opacity: 0;
+        visibility: hidden; /* Ocultar el elemento después del desvanecimiento */
+    }
+}
+
+/* Animación para girar la imagen */
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.link-unacar {
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 700;
+    color: #4536ca;
+/*Agregar efecto en el header de las letras*/
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 500;/*se agrego el margin pq se desarreglo al momento de añadir el spam */
+    
+}
+.link-unacar:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+.unacarmensaje{
+    position: relative;
+    margin-right: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+}
