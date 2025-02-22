@@ -17,11 +17,13 @@ try {
 
     if ($stmt->fetch()) {
         echo 'success';
+        error_log("Respuesta: success");
     } else {
         echo 'failure';
+        error_log("Respuesta: failure");
     }
 } catch (PDOException $e) {
-    echo 'error'; // Simplemente envía 'error' en caso de excepción
+    echo 'error';
     error_log('Error: ' . $e->getMessage()); // Mensaje de error en el registro
 }
 ?>
