@@ -1,13 +1,23 @@
 <?php
-$dsn = 'sqlite:./DB/usuarios.db'; // Ruta a tu base de datos
+header('Content-Type: text/plain');
+
+$databasePath = __DIR__ . '/DB/usuarios.db'; // Ruta correcta a la base de datos
+
+if (!file_exists($databasePath)) {
+    error_log('Error: La base de datos no existe en la ruta: ' . $databasePath);
+    echo 'error_db_not_found';
+    exit;
+}
+
+$dsn = 'sqlite:' . $databasePath;
+
 try {
     $pdo = new PDO($dsn);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $matricula = $_POST['matricula'];
-    $contrasena = $_POST['contrasena'];
+    $matricula = $_POST['matricula'] ?? '';
+    $contrasena = $_POST['contrasena'] ?? '';
 
-    // Mensajes de depuración
     error_log("Matricula: $matricula, Contraseña: $contrasena");
 
     $stmt = $pdo->prepare('SELECT * FROM alumnos WHERE matricula = :matricula AND contrasena = :contrasena');
@@ -24,8 +34,6 @@ try {
     }
 } catch (PDOException $e) {
     echo 'error';
-    error_log('Error: ' . $e->getMessage()); // Mensaje de error en el registro
+    error_log('Error: ' . $e->getMessage());
 }
 ?>
-
-
