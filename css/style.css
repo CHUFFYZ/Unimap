@@ -1,0 +1,113 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Color de fondo para mejor visibilidad */
+    font-family: 'Roboto', sans-serif; 
+  }
+  
+  #header {
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* Fondo blanco */
+    box-sizing: border-box;
+    position: fixed; /* Fijar el encabezado en la parte superior de la página */
+    z-index: 3;
+}
+
+#logo-container {
+    position: absolute;
+    left: 12px; /* Ajusta según sea necesario */
+    margin: 0;
+}
+
+#logo {
+    height: 60px; /* Ajusta el tamaño del logo según tus necesidades */
+}
+
+#title-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#title-container h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+  
+  #map-container {
+ position: absolute;
+  top: 90px; /* Desplazar hacia abajo para dejar espacio al encabezado */
+  left: 20px;
+  right: 20px;
+  bottom: 100px;
+  border: 2px solid #0000001c; /* Borde negro */
+  border-radius: 25px;
+  box-sizing: border-box; /* Incluir el borde en el tamaño total del contenedor */
+  overflow: hidden; /* Ocultar contenido fuera del contenedor */
+  }
+  
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+  
+/* CSS para ocultar la marca de agua de Leaflet */
+.leaflet-control-attribution {
+    display: none;
+  }
+
+
+  #ia {
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-color: #7777773f;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea el contenido al centro */
+    margin-left: 80px;
+}
+
+#texto h2 {
+    font-size: 24px;
+}
+
+#FCI{
+  margin-top:-25px;
+}
+
+#FCI h2 {
+    font-size: 12px;
+}
+
+#logoIA {
+    display: flex;
+    align-items: center;
+    margin-left: 18px;
+    margin-top: 10px;
+}
+
+.btn {
+    color: #001f3fc2;
+}
+
+#logo1 {
+    height: 70px;
+}
