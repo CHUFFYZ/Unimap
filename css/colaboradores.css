@@ -1,0 +1,115 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.header {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 3;
+    filter: drop-shadow(1px 1px 2px #00000079);
+}
+
+#creadores {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#creadores h2 {
+    margin: 0;
+    font-size: 25px;
+    text-shadow: 2px 2px 2px #0000002e;
+}
+
+.container1 {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid #0000001c;
+    border-radius: 0px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+    overflow-x: hidden; /* Evitar desplazamiento horizontal */
+    filter: drop-shadow(1px 1px 2px #00000079);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nombres {
+    margin-bottom: 20px;
+}
+
+#nombres h2 {
+    font-size: 20px;
+}
+
+.developer-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.developer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.developer-image {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+    box-shadow: 3px 3px 8px #00000084;
+
+}
+
+.developer-image:hover {
+    transform: scale(1.2);
+}
+
+.developer-title {
+    font-size: 16px;
+    margin: 0;
+}
+
+.developer-name {
+    font-size: 15px;
+    margin: 5px 0 0 0;
+
+}
+
+@media (max-width: 768px) {
+    .developer-list {
+        flex-direction: column;
+    }
+
+    .developer-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .developer-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

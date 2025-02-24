@@ -1,113 +1,177 @@
+/* CSS */
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0; /* Color de fondo para mejor visibilidad */
-    font-family: 'Roboto', sans-serif; 
-  }
-  
-  #header {
-    width: 100%;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff; /* Fondo blanco */
-    box-sizing: border-box;
-    position: fixed; /* Fijar el encabezado en la parte superior de la página */
-    z-index: 3;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#header {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  align-items: center;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  filter: drop-shadow(1px 1px 2px #00000079);
+  display: flex;
+  justify-content: space-between;
 }
 
 #logo-container {
-    position: absolute;
-    left: 12px; /* Ajusta según sea necesario */
-    margin: 0;
+  width: 150px;
 }
 
-#logo {
-    height: 60px; /* Ajusta el tamaño del logo según tus necesidades */
-}
-
-#title-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    position: relative;
+#logoweb img {
+  width: 40px;
+ 
 }
 
 #title-container h1 {
-    margin: 0;
-    font-size: 40px;
+  margin: 0;
+  font-size: 40px;
+  text-shadow: 2px 2px 2px #00000055;
 }
 
-  
-  #map-container {
- position: absolute;
-  top: 90px; /* Desplazar hacia abajo para dejar espacio al encabezado */
+#about-us {
+  width: 151.53px;
+  display: flex;
+  justify-content: flex-end; /* Alineación a la derecha */
+}
+
+#about-us .btn {
+  font-size: 12px;
+  color: #001f3fc2;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #001f3fc2;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#about-us .btn:hover {
+  background-color: #001f3fc2;
+  color: #ffffff;
+}
+
+
+/* Consulta de medios para pantallas más pequeñas */
+@media (max-width: 600px) {
+  #title-container h1 {
+      font-size: 30px; /* Reducir tamaño del título */
+  }
+
+  #about-us .btn {
+      font-size: 12px; /* Reducir tamaño del botón */
+      padding: 5px 10px; /* Ajustar padding del botón */
+  }
+
+  #logo {
+      height: 50px; /* Ajustar tamaño del logo */
+  }
+}
+
+#map-container {
+  position: absolute;
+  top: 105px;
   left: 20px;
   right: 20px;
-  bottom: 100px;
-  border: 2px solid #0000001c; /* Borde negro */
+  bottom: 95px;
+  border: 2px solid #0000001c;
   border-radius: 25px;
-  box-sizing: border-box; /* Incluir el borde en el tamaño total del contenedor */
-  overflow: hidden; /* Ocultar contenido fuera del contenedor */
-  }
-  
-  #map {
-    height: 100%;
-    width: 100%;
-  }
-  
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
 /* CSS para ocultar la marca de agua de Leaflet */
 .leaflet-control-attribution {
-    display: none;
-  }
+  display: none;
+}
 
+/* botones */
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+  border-radius: 30px !important;
+  width: 40px !important;
+  height: 40px !important;
+  font-size: 30px !important;
+  filter: drop-shadow(2px 2px 2px #00000079) !important;
+  margin: 8px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 
-  #ia {
-    width: 100%;
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    background-color: #7777773f;
-    box-sizing: border-box;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
+.leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover {
+  transform: scale(1.2);
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+#ia {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-color: #7777773f;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: -1px -2px 2px #00000038;
 }
 
 #contenido {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alinea el contenido al centro */
-    margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 80px;
+  filter: drop-shadow(1px 1px 2px #00000079);
 }
 
 #texto h2 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
-#FCI{
-  margin-top:-25px;
+#FCI {
+  margin-top: -25px;
 }
 
 #FCI h2 {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 #logoIA {
-    display: flex;
-    align-items: center;
-    margin-left: 18px;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 18px;
+  margin-top: 10px;
+  filter: drop-shadow(2px 4px 3px #000);
+}
+
+.logoIA:hover {
+  transform: scale(1.2);
 }
 
 .btn {
-    color: #001f3fc2;
+  color: #001f3fc2;
 }
 
 #logo1 {
-    height: 70px;
+  height: 70px;
 }
