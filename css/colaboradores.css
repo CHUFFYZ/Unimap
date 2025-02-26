@@ -6,48 +6,115 @@ html, body {
     font-family: 'Roboto', sans-serif; 
 }
 
-.header {
+#header {
     width: 100%;
     padding: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
     align-items: center;
     background-color: #ffffff;
     box-sizing: border-box;
     position: fixed;
+    top: 0;
     z-index: 3;
     filter: drop-shadow(1px 1px 2px #00000079);
-}
-
-#creadores {
-    flex-grow: 1;
     display: flex;
-    justify-content: center;
-    position: relative;
+    justify-content: space-between;
 }
 
-#creadores h2 {
-    margin: 0;
-    font-size: 25px;
-    text-shadow: 2px 2px 2px #0000002e;
-}
+#logo-container {
+    width: 15%;
+  }
+#logounimap {
+    width: 200px;
+  }
+  
+  #logounimap img {
+    width: 55px;
+    transition: transform 0.3s ease;
+  }
+  #logounimap img:hover {
+    transform: scale(1.2);
+  }
+  
 
-.container1 {
+  #nombreunimap{
+    width: 70%;
+    display: flex;
+    margin-top: -24px;
+    flex-direction: column;
+    align-items: center;
+    filter: drop-shadow(1px 1px 2px #00000079);
+  }
+  
+  #siglasunimap h2{
+    font-size: 28px;
+    color: #263e56;
+  }
+  
+  #nombrecunimap{
+    margin-top: -30px;
+  }
+  #nombrecunimap h2{
+    font-size: 12px;
+  }
+
+#regresar {
+    width: 15%;
+    display: flex;
+    justify-content: flex-end; /* Alineación a la derecha */
+  }
+  #regresar .btn {
+    font-size: 12px;
+    color: #001f3fc2;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #001f3fc2;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #regresar .btn:hover {
+    background-color: #001f3fc2;
+    color: #ffffff;
+  }
+  
+
+  .container1 {
     position: absolute;
     top: 100px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
     border: 2px solid #0000001c;
     border-radius: 0px;
     box-sizing: border-box;
-    overflow-y: auto; /* Permitir desplazamiento vertical */
-    overflow-x: hidden; /* Evitar desplazamiento horizontal */
+    overflow-y: auto;
+    overflow-x: hidden;
     filter: drop-shadow(1px 1px 2px #00000079);
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#texto {
+    margin-bottom: 20px;
+    text-align: justify;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#quesomos h2 {
+    font-size: 20px;
+}
+
+#quesomos p {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+#endesarrollo h2 {
+    font-size: 10px;
 }
 
 #nombres {
@@ -55,7 +122,7 @@ html, body {
 }
 
 #nombres h2 {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .developer-list {
@@ -80,7 +147,6 @@ html, body {
     margin-bottom: 10px;
     transition: transform 0.3s;
     box-shadow: 3px 3px 8px #00000084;
-
 }
 
 .developer-image:hover {
@@ -95,10 +161,9 @@ html, body {
 .developer-name {
     font-size: 15px;
     margin: 5px 0 0 0;
-
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .developer-list {
         flex-direction: column;
     }
@@ -112,4 +177,18 @@ html, body {
         margin-right: 0;
         margin-bottom: 10px;
     }
+
+    #logounimap img {
+        transition: transform 0.3s ease;
+    }
+    #logounimap img:hover {
+        transform: scale(1.2);
+    }
 }
+#regresar .btn {
+    font-size: 12px; /* Reducir tamaño del botón */
+    padding: 5px 10px; /* Ajustar padding del botón */
+}
+/*----------------*/
+
+

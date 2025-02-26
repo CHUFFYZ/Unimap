@@ -29,7 +29,12 @@ html, body {
 
 #logoweb img {
   width: 40px;
+  transition: transform 0.3s ease;
  
+}
+#logoweb img:hover {
+  transform: scale(1.2);
+  
 }
 
 #title-container h1 {
@@ -71,8 +76,13 @@ html, body {
       padding: 5px 10px; /* Ajustar padding del botón */
   }
 
-  #logo {
-      height: 50px; /* Ajustar tamaño del logo */
+
+  #logoweb img{
+    transition: transform 0.3s ease;
+  }
+  #logoweb img:hover {
+    transform: scale(1.2);
+    
   }
 }
 
@@ -86,6 +96,7 @@ html, body {
   border-radius: 25px;
   box-sizing: border-box;
   overflow: hidden;
+  box-shadow: 4px 4px 4px #888888, -4px -4px 10px #cccccc;
 }
 
 #map {
@@ -163,9 +174,12 @@ html, body {
   margin-top: 10px;
   filter: drop-shadow(2px 4px 3px #000);
 }
-
-.logoIA:hover {
+#logoIA img{
+  transition: transform 0.3s ease;
+}
+#logoIA img:hover {
   transform: scale(1.2);
+  
 }
 
 .btn {
